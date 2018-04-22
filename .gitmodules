@@ -1,0 +1,6 @@
+[submodule "WGE-Internal"]
+	path = WGE-Internal
+	url = https://github.com/Wolf-Gang/WGE-Internal.git
+[submodule "internal"]
+	path = internal
+	url = https://github.com/Wolf-Gang/WGE-Internal.git
