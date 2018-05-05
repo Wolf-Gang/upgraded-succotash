@@ -1,0 +1,27 @@
+<scene>
+    <has_boundary>false</has_boundary>
+    <boundary x="0" y="0" w="0" h="0"/>
+    <map>
+        <layer id="0" name="main">
+            <tile name="grass" x="-1" y="-2" w="9" h="11"/>
+        </layer>
+        <layer id="1" name="path"/>
+        <layer id="2" name="trees">
+            <tile name="tree" x="-6" y="0"/>
+            <tile name="tree" x="-5" y="6"/>
+            <tile name="tree" x="-1" y="-2"/>
+            <tile name="tree" x="-1" y="2"/>
+            <tile name="tree" x="0" y="-3"/>
+            <tile name="tree" x="0" y="5"/>
+            <tile name="tree" x="2" y="-4"/>
+            <tile name="tree" x="3" y="-2"/>
+            <tile name="tree" x="3" y="7"/>
+            <tile name="tree" x="6" y="2"/>
+            <tile name="tree" x="6" y="5"/>
+            <tile name="tree" x="7" y="-3"/>
+            <tile name="tree" x="9" y="-1"/>
+        </layer>
+        <texture>woods_tilemap</texture>
+    </map>
+    <collisionboxes/>
+</scene>
