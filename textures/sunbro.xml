@@ -1,7 +1,7 @@
 <atlas>
-    <default:default x="0" y="105" w="23" h="35"/>
+    <!-- <default:default x="0" y="105" w="23" h="35"/> -->
     <default:down x="0" y="0" w="23" h="35"/>
     <default:up x="0" y="35" w="23" h="35"/>
-    <default:left x="0" y="70" w="23" h="35"/>
-    <default:right x="0" y="105" w="23" h="35"/>
+    <!-- <default:left x="0" y="70" w="23" h="35"/> -->
+    <!-- <default:right x="0" y="105" w="23" h="35"/> -->
 </atlas>
