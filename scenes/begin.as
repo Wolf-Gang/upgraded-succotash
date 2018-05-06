@@ -1,6 +1,0 @@
-
-[start]
-void start()
-{
-  //
-}

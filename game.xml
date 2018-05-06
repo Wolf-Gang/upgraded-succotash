@@ -2,7 +2,7 @@
 	
 	<title>Sunbro's Quest</title>
 	
-	<scene  name="begin"/>
+	<scene  name="sunbro_house"/>
 	
 	<player texture="sunbro"/>
 	

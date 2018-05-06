@@ -1,9 +1,0 @@
-<scene>
-	<has_boundary>false</has_boundary>
-	<boundary x="0" y="0" w="0" h="0"/>
-	<map>
-		<texture>%texture%</texture>
-	</map>
-	<collisionboxes/>
-</scene>
-	

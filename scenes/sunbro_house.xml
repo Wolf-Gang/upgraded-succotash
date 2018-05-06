@@ -1,0 +1,23 @@
+<scene>
+    <has_boundary>false</has_boundary>
+    <boundary x="0" y="0" w="0" h="0"/>
+    <map>
+        <layer id="0" name="floor">
+            <tile name="floor" x="0" y="0" w="5" h="6"/>
+        </layer>
+        <layer id="1" name="furniture">
+            <tile name="rug" x="1" y="5"/>
+            <tile name="bedv" x="4" y="0"/>
+        </layer>
+        <texture>house_tilemap</texture>
+    </map>
+    <collisionboxes>
+        <wall x="5" y="0" w="1" h="6"/>
+        <wall x="0" y="-1" w="5" h="1"/>
+        <wall x="4.09375" y="0.09375" w="0.8125" h="1.71875"/>
+        <wall x="-1" y="0" w="1" h="6"/>
+        <wall x="0" y="6" w="1" h="1"/>
+        <wall x="3" y="6" w="2" h="1"/>
+        <door x="1" y="6" w="2" h="1" name="frontdoor" destination="frontdoor" scene="outside" offsetx="0" offsety="-0.69999999"/>
+    </collisionboxes>
+</scene>
