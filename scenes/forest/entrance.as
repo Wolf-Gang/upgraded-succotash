@@ -1,3 +1,5 @@
+#include "util/trees.as"
+
 [start]
 void start()
 {

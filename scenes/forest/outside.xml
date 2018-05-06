@@ -1,0 +1,18 @@
+<scene>
+    <has_boundary>true</has_boundary>
+    <boundary x="-3" y="-3" w="20" h="15"/>
+    <map>
+        <layer id="0" name="ground">
+            <tile name="grass" x="-3" y="-3" w="20" h="15"/>
+        </layer>
+        <layer id="1" name="path">
+            <tile name="path" x="2" y="-3" h="3"/>
+            <tile name="path" x="2" y="0" h="2" r="2"/>
+            <tile name="path_end" x="2" y="2" r="2"/>
+        </layer>
+        <texture>woods_tilemap</texture>
+    </map>
+    <collisionboxes>
+        <door x="1" y="-1" w="3" h="1" name="to_forest" destination="leaving_forest" scene="forest/entrance" offsetx="0" offsety="1"/>
+    </collisionboxes>
+</scene>
