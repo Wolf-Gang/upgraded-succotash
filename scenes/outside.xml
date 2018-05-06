@@ -5,7 +5,18 @@
         <layer id="0" name="ground">
             <tile name="grass" x="0" y="0" w="13" h="9"/>
         </layer>
+        <layer id="1" name="">
+            <tile name="path" x="2" y="0" h="2" r="2"/>
+            <tile name="path_end" x="2" y="2" r="2"/>
+        </layer>
         <texture>woods_tilemap</texture>
     </map>
-    <collisionboxes/>
+    <collisionboxes>
+        <wall x="3" y="-1" w="10" h="1"/>
+        <wall x="13" y="0" w="1" h="9"/>
+        <wall x="0" y="9" w="13" h="1"/>
+        <wall x="-1" y="0" w="1" h="9"/>
+        <wall x="0" y="-1" w="2" h="1"/>
+        <door x="2" y="-1" w="1" h="1" name="to_forest" destination="leaving_forest" scene="forest_entrance" offsetx="0" offsety="1"/>
+    </collisionboxes>
 </scene>
