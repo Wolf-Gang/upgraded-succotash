@@ -3,16 +3,37 @@
     <boundary x="-3" y="-3" w="20" h="15"/>
     <map>
         <layer id="0" name="ground">
-            <tile name="grass" x="-3" y="-3" w="20" h="15"/>
+            <tile name="grass" x="0" y="-3" w="13" h="3"/>
+            <tile name="grass" x="0" y="0" w="14" h="6"/>
         </layer>
-        <layer id="1" name="path">
-            <tile name="path" x="2" y="-3" h="3"/>
-            <tile name="path" x="2" y="0" h="2" r="2"/>
-            <tile name="path_end" x="2" y="2" r="2"/>
+        <layer id="1" name="Forest">
+            <tile name="forestWestSide" x="0" y="-3" h="8"/>
+            <tile name="forestBLCorner" x="0" y="5"/>
+            <tile name="forestSouthSideV1" x="1" y="5" w="2"/>
+            <tile name="forestBLEdge" x="3" y="-3"/>
+            <tile name="forestSouthSideV2" x="3" y="5"/>
+            <tile name="forestTreeWall" x="4" y="-3" w="9"/>
+            <tile name="forestSouthSideV1" x="4" y="5" w="2"/>
+            <tile name="forestSouthSideV2" x="6" y="5" w="3"/>
+            <tile name="forestSouthSideV1" x="9" y="5" w="2"/>
+            <tile name="forestSouthSideV2" x="11" y="5" w="2"/>
+            <tile name="forestBLCorner" x="13" y="-3" r="2"/>
+            <tile name="forestEastSide" x="13" y="-2" h="7"/>
+            <tile name="forestBLCorner" x="13" y="5" r="3"/>
+        </layer>
+        <layer id="2" name="path">
+            <tile name="path" x="1.5" y="-3"/>
+            <tile name="path" x="1.5" y="-2.5" h="3"/>
+            <tile name="path_end" x="1.5" y="0.5" r="2"/>
         </layer>
         <texture>woods_tilemap</texture>
     </map>
     <collisionboxes>
-        <door x="1" y="-1" w="3" h="1" name="to_forest" destination="leaving_forest" scene="forest/entrance" offsetx="0" offsety="1"/>
+        <door x="1" y="-3" w="2" h="1" name="to_forest" destination="leaving_forest" scene="forest/entrance" offsetx="0" offsety="1"/>
+        <wall x="3" y="-1.5" w="10" h="1"/>
+        <wall x="13" y="-0.5" w="1" h="5.5"/>
+        <wall x="1" y="5" w="12" h="1"/>
+        <wall x="0" y="-3" w="1" h="8"/>
+        <wall x="3" y="-3" w="1" h="1.5"/>
     </collisionboxes>
 </scene>

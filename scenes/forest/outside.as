@@ -4,16 +4,17 @@
 void start()
 {
 	if(!has_came_through_door())
-		set_position(player::get(), vec(9.375, 3.6));
+		set_position(player::get(), vec(9.375, 2));
 }
 
 [start]
 void make_house()
 {
   entity sunbro_house = add_entity("sunbro_house");
-  set_position(sunbro_house, vec(10.5, 3));
+  set_position(sunbro_house, vec(10.5, 0));
 }
 
+/*
 [start]
 void create_forest()
 {
@@ -40,4 +41,4 @@ void create_forest()
   create_tree(vec(1.3, -.4));
   create_tree(vec(3.7, -.4));
   
-}
+}*/

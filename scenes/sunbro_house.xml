@@ -18,6 +18,6 @@
         <wall x="-1" y="0" w="1" h="6"/>
         <wall x="0" y="6" w="1" h="1"/>
         <wall x="3" y="6" w="2" h="1"/>
-        <door x="1" y="6" w="2" h="1" name="frontdoor" destination="frontdoor" scene="outside" offsetx="0" offsety="-0.69999999"/>
+        <door x="1" y="6" w="2" h="1" name="frontdoor" destination="frontdoor" scene="forest/outside" offsetx="0" offsety="-0.69999999"/>
     </collisionboxes>
 </scene>
