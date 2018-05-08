@@ -35,5 +35,9 @@
         <wall x="1" y="5" w="12" h="1"/>
         <wall x="0" y="-3" w="1" h="8"/>
         <wall x="3" y="-3" w="1" h="1.5"/>
+        <wall x="10.5" y="0.78125" w="0.875" h="0.625"/>
+        <wall x="9.4375" y="0.78125" w="0.0625" h="0.625"/>
+        <wall x="9.5" y="0.78125" w="1" h="0.46875"/>
+        <door x="9.5" y="1.25" w="1" h="0.15625" name="frontdoor" destination="frontdoor" scene="sunbro_house" offsetx="0" offsety="0.70000005"/>
     </collisionboxes>
 </scene>

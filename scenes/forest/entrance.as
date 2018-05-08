@@ -4,14 +4,16 @@
 void start()
 {
 	if(!has_came_through_door())
-		set_position(player::get(), vec(1.5, 30.5));
+		set_position(player::get(), vec(9.5, 11.7));
 }
 
 [start]
 void lumi_start()
 {
+  if(has_flag("the_journey_commences!\\[T]/"))
+    return;
   lumi = add_entity("lumi");
-  set_position(lumi, vec(-1.5, 22.5));
+  set_position(lumi, vec(3.5, 4.5));
 }
 
 [start]
@@ -53,10 +55,28 @@ void meeting()
   say("I'll explain later.");
   nl("Let's go!");
   
-  //do thing
+  lumi::attach();
   
   set_flag("the_journey_commences!\\[T]/");
   
+  player::lock(false);
   narrative::end();
   group::enable("meet_lumi", false);
 }
+
+[group friendlysign]
+void readme()
+{
+  if(vec(10, 8).distance(get_position(lumi)) <= 3)
+  {
+    say("Welcome to the Very Welcoming Forest.");
+    nl("Please enjoy your stay!");
+  } 
+  else
+  {
+    say("It's too dark to make out anything.");
+  }
+  player::lock(false);
+  narrative::end();
+}
+

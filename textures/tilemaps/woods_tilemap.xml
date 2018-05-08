@@ -14,4 +14,5 @@
     <subtexture name="forestEastSide" x="224" y="0" w="32" h="32" loop="1"/>
     <subtexture name="forestBLCorner" x="192" y="96" w="32" h="32" loop="1"/>
     <subtexture name="forestBLEdge" x="224" y="32" w="32" h="80" loop="1"/>
+    <subtexture name="sign" x="0" y="119" w="48" h="32" loop="1"/>
 </atlas>
