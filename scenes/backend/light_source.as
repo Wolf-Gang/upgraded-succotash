@@ -6,8 +6,8 @@ class light_source
   
   light_source(entity pSource, entity pLight)
   {
-    mSource = pSource;
-    mLight  = pLight;
+    set_source(pSource);
+    set_light(pLight);
   }
   
   void set_source(entity pSource)
@@ -64,17 +64,17 @@ class light_source
 namespace light
 {
 
-void set_attenuation(light_source l, float pAttenuation)
+void set_attenuation(light_source@ l, float pAttenuation)
 {
   l.set_attenuation(pAttenuation * 32);
 }
 
-void set_radius(light_source l, float pRadius)
+void set_radius(light_source@ l, float pRadius)
 {
   l.set_radius(pRadius);
 }
 
-void set_color(light_source l, color pColor)
+void set_color(light_source@ l, color pColor)
 {
   l.set_color(pColor);
 }
