@@ -54,4 +54,5 @@ void make_house()
 {
   entity sunbro_house = add_entity("sunbro_house");
   set_position(sunbro_house, vec(10.5, 1.5));
+	set_z(sunbro_house, -0.5);
 }
