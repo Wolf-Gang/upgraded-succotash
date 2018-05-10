@@ -15,6 +15,7 @@ namespace priv
   {
     if(!has_flag("the_journey_commences!\\[T]/"))
       return;
+    yield();
     lumi_init();
   }
   
