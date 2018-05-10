@@ -12,8 +12,11 @@ void lumi_start()
 {
   if(has_flag("the_journey_commences!\\[T]/"))
     return;
-  lumi = add_entity("lumi");
-  set_position(lumi, vec(3.5, 4.5));
+  lumi::priv::lumi_init();
+  set_position(lumi, vec(3.5, 4.7));
+  
+  light::set_radius(lumi, 1.5);
+  light::set_attenuation(lumi, 2);
 }
 
 [start]
@@ -67,7 +70,7 @@ void meeting()
 [group friendlysign]
 void readme()
 {
-  if(vec(10, 8).distance(get_position(lumi)) <= 3)
+  if(lumi.is_lighting(vec(10, 7.9)))
   {
     say("Welcome to the Very Welcoming Forest.");
     nl("Please enjoy your stay!");

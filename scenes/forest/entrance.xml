@@ -16,9 +16,9 @@
             <tile name="grass" x="7" y="11" w="6"/>
             <tile name="grass" x="8" y="12" w="3"/>
             <tile name="grass" x="11" y="6" w="8"/>
-            <tile name="grass" x="12" y="-3" w="5"/>
+            <tile name="grass" x="12" y="-3" w="6"/>
             <tile name="grass" x="12" y="5" w="7"/>
-            <tile name="grass" x="13" y="-4" w="3"/>
+            <tile name="grass" x="13" y="-4" w="4"/>
             <tile name="grass" x="13" y="-2" w="5"/>
             <tile name="grass" x="13" y="3" w="7" h="2"/>
             <tile name="grass" x="14" y="-1" w="5"/>
@@ -26,11 +26,12 @@
             <tile name="grass" x="14" y="2" w="6"/>
             <tile name="grass" x="15" y="1" w="5"/>
         </layer>
-        <layer id="1" name="path">
+        <layer id="1" name="forest"/>
+        <layer id="2" name="path">
             <tile name="path_end" x="9" y="11"/>
             <tile name="path" x="9" y="12"/>
         </layer>
-        <layer id="2" name="sign">
+        <layer id="3" name="sign">
             <tile name="sign" x="9.25" y="7"/>
         </layer>
         <texture>woods_tilemap</texture>
@@ -40,5 +41,42 @@
         <button x="3" y="4" w="1" h="1" group="meet_lumi"/>
         <wall x="9.34375" y="7" w="1.375" h="0.84375"/>
         <button x="9.1875" y="7.21875" w="1.65625" h="0.78125" group="friendlysign"/>
+        <wall x="1" y="-1" w="4" h="1"/>
+        <wall x="5" y="0" w="1" h="1"/>
+        <wall x="6" y="1" w="1" h="1"/>
+        <wall x="7" y="2" w="1" h="2"/>
+        <wall x="8" y="4" w="1" h="2"/>
+        <wall x="9" y="6" w="2" h="1"/>
+        <wall x="0" y="0" w="1" h="1"/>
+        <wall x="-1" y="1" w="1" h="2"/>
+        <wall x="-2" y="3" w="1" h="3"/>
+        <wall x="-1" y="6" w="1" h="2"/>
+        <wall x="0" y="8" w="1" h="1"/>
+        <wall x="1" y="9" w="1" h="1"/>
+        <wall x="2" y="10" w="2" h="1"/>
+        <wall x="4" y="11" w="3" h="1"/>
+        <wall x="7" y="12" w="1" h="1"/>
+        <wall x="11" y="12" w="2" h="1"/>
+        <wall x="11" y="5" w="1" h="1"/>
+        <wall x="12" y="3" w="1" h="2"/>
+        <wall x="13" y="2" w="1" h="1"/>
+        <wall x="14" y="1" w="1" h="1"/>
+        <wall x="13" y="-1" w="1" h="2"/>
+        <wall x="12" y="-2" w="1" h="1"/>
+        <wall x="11" y="-3" w="1" h="1"/>
+        <wall x="12" y="-4" w="1" h="1"/>
+        <wall x="13" y="-5" w="1" h="1"/>
+        <door x="14" y="-5" w="2" h="1" name="deeper" destination="to_entrance" scene="forest/a_fork" offsetx="0" offsety="1"/>
+        <button x="16" y="-5" w="1" h="1"/>
+        <wall x="17" y="-4" w="1" h="1"/>
+        <wall x="18" y="-3" w="1" h="2"/>
+        <wall x="19" y="-1" w="1" h="1"/>
+        <wall x="20" y="0" w="1" h="5"/>
+        <wall x="19" y="5" w="1" h="2"/>
+        <wall x="18" y="7" w="1" h="1"/>
+        <wall x="17" y="8" w="1" h="1"/>
+        <wall x="16" y="9" w="1" h="1"/>
+        <wall x="15" y="10" w="1" h="1"/>
+        <wall x="13" y="11" w="2" h="1"/>
     </collisionboxes>
 </scene>
