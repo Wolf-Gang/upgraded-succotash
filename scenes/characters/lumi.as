@@ -28,7 +28,7 @@ namespace priv
     lumi.set_light(lumi_light);
     
     light::set_radius(lumi, light_radius);
-    light::set_color(lumi, color(1, 1, .5, 1));
+    light::set_color(lumi, color(1, 1, 1, 1));
     light::set_attenuation(lumi, light_attenuation);
     
     if(has_flag("lumi_attached"))
@@ -41,14 +41,20 @@ void attach()
   set_parent(lumi, player::get());
   set_position(lumi, vec(0, 0));
   //set_atlas(lumi, attached);
+  
+  yield();
+  light::remove_bg_light();
+  
   set_flag("lumi_attached");
-  dprint("attached");
 }
 
 void detach()
 {
   detach_parent(lumi);
   //set_atlas(lumi, "default:default");
+  
+  light::return_bg_light();
+  
   unset_flag("lumi_attached");
 }
 

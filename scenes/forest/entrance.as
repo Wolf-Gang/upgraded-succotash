@@ -60,6 +60,9 @@ void meeting()
   
   lumi::attach();
   
+  light::set_radius(lumi, lumi::priv::light_radius);
+  light::set_attenuation(lumi, lumi::priv::light_attenuation);
+  
   set_flag("the_journey_commences!\\[T]/");
   
   player::lock(false);

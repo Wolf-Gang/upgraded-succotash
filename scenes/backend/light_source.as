@@ -29,6 +29,7 @@ class light_source
   
   bool is_lighting(vec pPos)
   {
+    dprint(to_string(get_absolute_position(mSource)));
     return pPos.distance(get_absolute_position(mSource)) <= mRadius;
   }
   
