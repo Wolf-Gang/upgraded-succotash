@@ -15,7 +15,6 @@ namespace priv
   {
     if(!has_flag("the_journey_commences!\\[T]/"))
       return;
-    yield();
     lumi_init();
   }
   
@@ -32,8 +31,8 @@ namespace priv
     light::set_color(lumi, color(1, 1, .5, 1));
     light::set_attenuation(lumi, light_attenuation);
     
-    //if(has_flag("lumi_attached"))
-      //lumi::attach();
+    if(has_flag("lumi_attached"))
+      lumi::attach();
   }
 }
 

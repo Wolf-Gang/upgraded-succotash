@@ -40,7 +40,7 @@ class light_source
   
   void set_attenuation(float pAttenuation)
   {
-    light::set_attenuation(mLight, pAttenuation);
+    light::set_attenuation(mLight, pAttenuation * 32);
   }
   
   void set_color(color pColor)
@@ -66,7 +66,7 @@ namespace light
 
 void set_attenuation(light_source@ l, float pAttenuation)
 {
-  l.set_attenuation(pAttenuation * 32);
+  l.set_attenuation(pAttenuation);
 }
 
 void set_radius(light_source@ l, float pRadius)
