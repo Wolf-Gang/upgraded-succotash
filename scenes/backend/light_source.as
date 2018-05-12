@@ -13,6 +13,12 @@ class light_source
   void set_source(entity pSource)
   {
     mSource = pSource;
+    
+    if(mLight.is_valid())
+    {
+      add_child(mSource, mLight);
+      set_position(mLight, vec(0, 0));
+    }
   }
   
   void set_light(entity pLight)
@@ -24,13 +30,19 @@ class light_source
     {
       set_parent(mLight, mSource);
       set_position(mLight, vec(0, 0));
+      // dprint(to_string(get_absolute_position(mLight)));
+      // dprint("hi");
     }
   }
   
   bool is_lighting(vec pPos)
   {
-    dprint(to_string(get_absolute_position(mSource)));
-    return pPos.distance(get_absolute_position(mSource)) <= mRadius;
+    return pPos.distance(get_absolute_position(mSource) - vec(6, 5) + get_position(player::get())) <= mRadius;
+  }
+  
+  bool is_lighting(entity e)
+  {
+    return get_absolute_position(mSource).distance(get_absolute_position(e)) <= mRadius;
   }
   
   void set_radius(float pRadius)

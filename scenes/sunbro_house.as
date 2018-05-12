@@ -6,7 +6,7 @@ void start()
     set_position(player::get(), vec(3.75, 1.5));
 }
 
-[start]
+//[start]
 void inital_day()
 {
   if(!has_flag("sun's_out"))

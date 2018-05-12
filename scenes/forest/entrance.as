@@ -1,4 +1,3 @@
-#include "util/trees.as"
 
 [start]
 void start()
@@ -12,7 +11,18 @@ void lumi_start()
 {
   if(has_flag("the_journey_commences!\\[T]/"))
     return;
-  lumi::priv::lumi_init();
+  
+  entity lumi_e = add_entity("lumi");
+  
+  entity lumi_light = light::add();
+  
+  lumi.set_source(lumi_e);
+  lumi.set_light(lumi_light);
+  
+  light::set_radius(lumi, lumi::priv::light_radius_s);
+  light::set_color(lumi, lumi::priv::light_color);
+  light::set_attenuation(lumi, lumi::priv::light_attenuation_s);
+  
   set_position(lumi, vec(3.5, 4.7));
   
   light::set_radius(lumi, 1.5);
@@ -60,8 +70,8 @@ void meeting()
   
   lumi::attach();
   
-  light::set_radius(lumi, lumi::priv::light_radius);
-  light::set_attenuation(lumi, lumi::priv::light_attenuation);
+  // light::set_radius(lumi, lumi::priv::light_radius);
+  // light::set_attenuation(lumi, lumi::priv::light_attenuation);
   
   set_flag("the_journey_commences!\\[T]/");
   
