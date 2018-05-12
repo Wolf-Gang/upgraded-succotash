@@ -69,6 +69,7 @@ void attach()
   //set_atlas(lumi, "attached");
   
   set_parent(lumi, player::get());
+  set_position(lumi, vec(0, 0));
   
   light::set_attenuation(lumi, lumi::priv::light_attenuation_l);
   light::set_radius(lumi, lumi::priv::light_radius_l);
