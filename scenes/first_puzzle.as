@@ -46,6 +46,11 @@ void open_door()
   animation::start(rightdoor);
   animation::start(leftdoor);
   
+  for(uint i = 0; i < 3; i++)
+    set_atlas(rightwalls[i], "old_wall_l");
+  for(uint i = 0; i < 4; i++)
+    set_atlas(leftwalls[i], "old_wall_l");
+  
   group::enable("lightdoor", false);
 }
 
