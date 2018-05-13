@@ -66,7 +66,7 @@
         <wall x="11" y="-3" w="1" h="1"/>
         <wall x="12" y="-4" w="1" h="1"/>
         <wall x="13" y="-5" w="1" h="1"/>
-        <door x="14" y="-5" w="2" h="1" name="deeper" destination="to_entrance" scene="forest/a_fork" offsetx="0" offsety="1"/>
+        <door x="14" y="-5" w="2" h="1" name="deeper" destination="to_entrance" scene="first_puzzle" offsetx="0" offsety="1"/>
         <button x="16" y="-5" w="1" h="1"/>
         <wall x="17" y="-4" w="1" h="1"/>
         <wall x="18" y="-3" w="1" h="2"/>

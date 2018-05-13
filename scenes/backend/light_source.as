@@ -30,8 +30,6 @@ class light_source
     {
       set_parent(mLight, mSource);
       set_position(mLight, vec(0, 0));
-      // dprint(to_string(get_absolute_position(mLight)));
-      // dprint("hi");
     }
   }
   
@@ -43,6 +41,18 @@ class light_source
   bool is_lighting(entity e)
   {
     return get_absolute_position(mSource).distance(get_absolute_position(e)) <= mRadius;
+  }
+  
+  void turn_on()
+  {
+    is_on = true;
+    light::set_color(mLight, mColor);
+  }
+  
+  void turn_off()
+  {
+    is_on = false;
+    light::set_color(mLight, light::off);
   }
   
   void set_radius(float pRadius)
@@ -58,7 +68,8 @@ class light_source
   
   void set_color(color pColor)
   {
-    light::set_color(mLight, pColor);
+    mColor = pColor;
+    light::set_color(mLight, mColor);
   }
   
   float get_radius()
@@ -67,6 +78,10 @@ class light_source
   }
   
   entity opImplConv() const { return mSource; }
+  
+  private bool is_on;
+  
+  private color mColor;
   
   private float mRadius;
   
@@ -90,6 +105,16 @@ void set_radius(light_source@ l, float pRadius)
 void set_color(light_source@ l, color pColor)
 {
   l.set_color(pColor);
+}
+
+void turn_on(light_source@ l, bool pOn = true)
+{
+  pOn ? l.turn_on() : l.turn_off();
+}
+  
+void turn_off(light_source@ l)
+{
+  turn_on(l, false);
 }
 
 }

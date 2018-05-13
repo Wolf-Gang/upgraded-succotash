@@ -1,12 +1,11 @@
 <atlas>
-    <subtexture name="grass" x="128" y="190" w="32" h="32"/>
+    <subtexture name="grass" x="128" y="94" w="32" h="32"/>
     <subtexture name="path" x="32" y="0" w="32" h="32"/>
     <subtexture name="path_end" x="64" y="0" w="32" h="32"/>
     <subtexture name="redflower" x="96" y="0" w="16" h="16" frames="4" interval="300" loop="1"/>
     <subtexture name="blueflower" x="96" y="16" w="16" h="16" frames="4" interval="300" loop="1"/>
     <subtexture name="orangeflower" x="96" y="32" w="16" h="16" frames="4" interval="300" loop="1"/>
     <subtexture name="purpleflower" x="96" y="48" w="16" h="16" frames="4" interval="300" loop="1"/>
-    <subtexture name="tree" x="0" y="32" w="60" h="87"/>
     <subtexture name="forestTreeWall" x="160" y="0" w="32" h="80" loop="1"/>
     <subtexture name="forestWestSide" x="192" y="0" w="32" h="32" loop="1"/>
     <subtexture name="forestSouthSideV1" x="192" y="32" w="32" h="32" loop="1"/>
@@ -14,7 +13,17 @@
     <subtexture name="forestEastSide" x="224" y="0" w="32" h="32" loop="1"/>
     <subtexture name="forestBLCorner" x="192" y="96" w="32" h="32" loop="1"/>
     <subtexture name="forestBLEdge" x="224" y="32" w="32" h="80" loop="1"/>
-    <subtexture name="sign" x="0" y="119" w="48" h="32" loop="1"/>
-    <subtexture name="Grass1" x="128" y="160" w="32" h="30" loop="1"/>
-    <subtexture name="Grass2" x="128" y="222" w="32" h="34" loop="1"/>
+    <subtexture name="sign" x="0" y="32" w="48" h="32" loop="1"/>
+    <subtexture name="Grass1" x="128" y="64" w="32" h="30" loop="1"/>
+    <subtexture name="Grass2" x="128" y="126" w="32" h="34" loop="1"/>
+    <subtexture name="old_wall" x="0" y="160" w="32" h="32" loop="1"/>
+    <subtexture name="old_wall_l" x="32" y="160" w="32" h="32" loop="1"/>
+    <subtexture name="l_old_door" x="0" y="192" w="32" h="32" loop="1"/>
+    <subtexture name="l_old_door_l" x="32" y="192" w="32" h="32" interval="200"/>
+    <subtexture name="r_old_door_l" x="32" y="224" w="32" h="32" interval="200"/>
+    <subtexture name="r_old_door" x="0" y="224" w="32" h="32" loop="1"/>
+    <subtexture name="orb" x="64" y="160" w="32" h="32" loop="1"/>
+    <subtexture name="orb_l" x="96" y="160" w="32" h="32" loop="1"/>
+    <subtexture name="l_old_door_open" x="32" y="192" w="32" h="32" frames="2" interval="200"/>
+    <subtexture name="r_old_door_open" x="32" y="224" w="32" h="32" frames="2" interval="200"/>
 </atlas>

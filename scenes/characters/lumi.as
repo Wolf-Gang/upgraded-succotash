@@ -65,7 +65,7 @@ void attach()
   player::lock(true);
   //set_atlas(lumi, "to_player");
   //animation::start(lumi);
-  move(lumi, get_position(player::get()), .6);
+  /* get_position(player::get()).distance */ move(lumi, get_position(player::get()), .4);
   //set_atlas(lumi, "attached");
   
   set_parent(lumi, player::get());
