@@ -1,4 +1,3 @@
-#include "util/trees.as"
 
 //[start]
 void create_light()

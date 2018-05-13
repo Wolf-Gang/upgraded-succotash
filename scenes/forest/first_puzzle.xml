@@ -25,10 +25,12 @@
         <wall x="1" y="2" w="1" h="2"/>
         <wall x="2" y="1" w="1" h="1"/>
         <wall x="3" y="0" w="1" h="1"/>
-        <door x="4" y="-1" w="3" h="1" name="" destination="" scene="" offsetx="0" offsety="1"/>
+        <door x="4" y="-1" w="3" h="1" name="puzzle2" destination="first_puzzle" scene="forest/puzzle2" offsetx="0" offsety="1"/>
         <wall x="7" y="0" w="2" h="1"/>
         <wall x="6.6875" y="5.6875" w="3.3125" h="0.0625"/>
         <wall x="1" y="5.6875" w="4.375" h="0.0625"/>
         <wall x="5.375" y="5.6875" w="1.3125" h="0.0625" group="lightdoor"/>
+        <wall x="7.25" y="6.4375" w="0.5" h="0.34375"/>
+        <wall x="4.25" y="6.4375" w="0.5" h="0.34375"/>
     </collisionboxes>
 </scene>

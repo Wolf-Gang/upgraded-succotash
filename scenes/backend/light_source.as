@@ -2,10 +2,15 @@
 
 class light_source
 {
-  light_source() {}
+  light_source()
+  {
+    mIs_on = true;
+  }
   
   light_source(entity pSource, entity pLight)
   {
+    mIs_on = true;
+    mLight_offset = vec(0, 0);
     set_source(pSource);
     set_light(pLight);
   }
@@ -17,7 +22,7 @@ class light_source
     if(mLight.is_valid())
     {
       add_child(mSource, mLight);
-      set_position(mLight, vec(0, 0));
+      set_position(mLight, mLight_offset);
     }
   }
   
@@ -29,30 +34,45 @@ class light_source
     if(mSource.is_valid())
     {
       set_parent(mLight, mSource);
-      set_position(mLight, vec(0, 0));
+      set_position(mLight, mLight_offset);
     }
+  }
+  
+  void set_light_offset(vec pOffset)
+  {
+    mLight_offset = pOffset;
+    set_position(mLight, mLight_offset);
   }
   
   bool is_lighting(vec pPos)
   {
-    return pPos.distance(get_absolute_position(mSource) - vec(6, 5) + get_position(player::get())) <= mRadius;
+    if(!mIs_on)
+      return false;
+    return pPos.distance(get_absolute_position(mLight) - vec(6, 5) + get_position(player::get())) <= mRadius;
   }
   
   bool is_lighting(entity e)
   {
-    return get_absolute_position(mSource).distance(get_absolute_position(e)) <= mRadius;
+    if(!mIs_on)
+      return false;
+    return get_absolute_position(mLight).distance(get_absolute_position(e)) <= mRadius;
   }
   
   void turn_on()
   {
-    is_on = true;
+    mIs_on = true;
     light::set_color(mLight, mColor);
   }
   
   void turn_off()
   {
-    is_on = false;
+    mIs_on = false;
     light::set_color(mLight, light::off);
+  }
+  
+  bool is_on()
+  {
+    return mIs_on;
   }
   
   void set_radius(float pRadius)
@@ -69,7 +89,8 @@ class light_source
   void set_color(color pColor)
   {
     mColor = pColor;
-    light::set_color(mLight, mColor);
+    if(mIs_on)
+      light::set_color(mLight, mColor);
   }
   
   float get_radius()
@@ -79,7 +100,7 @@ class light_source
   
   entity opImplConv() const { return mSource; }
   
-  private bool is_on;
+  private bool mIs_on;
   
   private color mColor;
   
@@ -87,6 +108,8 @@ class light_source
   
   private entity mSource;
   private entity mLight;
+  
+  private vec mLight_offset;
 }
 
 namespace light
@@ -107,14 +130,19 @@ void set_color(light_source@ l, color pColor)
   l.set_color(pColor);
 }
 
-void turn_on(light_source@ l, bool pOn = true)
+void turn_on(light_source@ l)
 {
-  pOn ? l.turn_on() : l.turn_off();
+  l.turn_on();
 }
   
 void turn_off(light_source@ l)
 {
-  turn_on(l, false);
+  l.turn_off();
+}
+
+bool is_on(light_source@ l)
+{
+  return l.is_on();
 }
 
 }

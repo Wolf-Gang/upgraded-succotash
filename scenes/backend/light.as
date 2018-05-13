@@ -33,4 +33,17 @@ void return_bg_light()
   set_color(light::priv::bg_light, light::priv::bg_color);
 }
 
+//note: this can also make the radius smaller
+void expand(entity l, float pRadius, float pTime)
+{
+  float rate = (light::get_radius(l) - pRadius)/pTime;
+  
+  for(float t = 0; t < pTime; t += get_delta())
+  {
+    light::set_radius(l, light::get_radius(l) + rate * get_delta());
+    yield();
+  }
+  light::set_radius(l, pRadius);
+}
+
 }
