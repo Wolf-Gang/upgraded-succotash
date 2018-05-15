@@ -1,7 +1,5 @@
 <atlas>
-    <default:default x="0" y="0" w="23" h="35"/>
-    <default:down x="0" y="0" w="23" h="35"/>
-    <default:up x="0" y="35" w="23" h="35"/>
-    <!-- <default:left x="0" y="70" w="23" h="35"/> -->
-    <!-- <default:right x="0" y="105" w="23" h="35"/> -->
+    <subtexture name="default:default" x="0" y="0" w="23" h="35"/>
+    <subtexture name="default:down" x="0" y="0" w="23" h="35" frames="4" interval="200" pingpong="1"/>
+    <subtexture name="default:up" x="0" y="35" w="23" h="35" frames="4" interval="200" pingpong="1"/>
 </atlas>
