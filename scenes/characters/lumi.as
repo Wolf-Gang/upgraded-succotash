@@ -1,4 +1,5 @@
 #include "../backend/light_source.as"
+#include "../backend/float.as"
 
 light_source lumi ();
 
@@ -52,9 +53,11 @@ namespace priv
     
     set_parent(lumi, player::get());
     set_position(lumi, vec(0, 0));
-    
+	
+	float_entity(lumi_e, .1, 5, -1);
+	
     is_attached = true;
-    
+	
     yield();
     light::remove_bg_light();
   }
