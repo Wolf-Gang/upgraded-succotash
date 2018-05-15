@@ -27,6 +27,8 @@ void lumi_start()
   
   light::set_radius(lumi, 1.5);
   light::set_attenuation(lumi, 2);
+  
+  float_entity(lumi, .1, 5, -1);
 }
 
 [start]
