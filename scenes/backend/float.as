@@ -1,49 +1,30 @@
-//basically the sine function
-
-void float_entity(entity floater, float height, float period, float cycles = 1) {
-  
-  create_thread(function(args) {
-    
-    entity floater = entity(args["floater"]);
-    
-    float height = float(args["height"]);
-    
-    float period = float(args["period"]);
-    
-    float cycles = float(args["cycles"]);
-    
+void float_entity(entity pFloater, float pHeight, float pPeriod, float pCycles = 1)
+{
+  create_thread(function(args)
+  {
+    entity pFloater = entity(args["pFloater"]);
+    float pHeight = float(args["pHeight"]);
+    float pPeriod = float(args["pPeriod"]);
+    float pCycles = float(args["pCycles"]);
     float t = 0;
-    
-    float origin = get_z(floater);
-    
-    if(cycles < 0) {
-    
-      do {
-        
+    if(pCycles < 0)
+    {
+      do{
         //The derivative of the sine function (the cosine function) is used here and below so that it doesn't
         //mess up other things that would affect z value
-        set_z(floater, get_z(floater) + (height * cos((t * 2 * math::pi) / period) * get_delta()));
-        
-        t += get_delta();
-      
-        if(t >= period) {
-          
-          t -= period;
-          
-        }
+        // Note: This is still subject to floating point errors and the accuracy of the system's cosine approximate.
+        //   This may result is the origin shifting after an extended amount of time.
+        set_z(pFloater, get_z(pFloater) + (pHeight * cos((t * 2 * math::pi) / pPeriod) * get_delta()));
+        t  = (t + get_delta()) % pPeriod;
       } while(yield());
-      
     } else {
-    
-      for(t; t < cycles * period; t += get_delta()) {
-        
-        set_z(floater, get_z(floater) + height * cos(t * 2 * math::pi * period) * get_delta());
-        
+      for(t; t < pCycles * pPeriod; t += get_delta())
+      {
+        set_z(pFloater, get_z(pFloater) + pHeight * cos(t * 2 * math::pi * pPeriod) * get_delta());
         yield();
       }
     }
-    
-  }, dictionary = {{"floater", floater}, {"height", height}, {"period", period}, {"cycles", cycles}});
+  }, dictionary = {{"pFloater", pFloater}, {"pHeight", pHeight}, {"pPeriod", pPeriod}, {"pCycles", pCycles}});
   
 }
 
