@@ -26,4 +26,6 @@
     <subtexture name="orb_l" x="96" y="160" w="32" h="32" loop="1"/>
     <subtexture name="l_old_door_open" x="32" y="192" w="32" h="32" frames="2" interval="200"/>
     <subtexture name="r_old_door_open" x="32" y="224" w="32" h="32" frames="2" interval="200"/>
+    <subtexture name="bush" x="160" y="80" w="32" h="32" loop="1"/>
+    <subtexture name="fence" x="160" y="128" w="64" h="32" loop="1"/>
 </atlas>
