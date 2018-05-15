@@ -9,6 +9,7 @@ namespace lumi
 namespace priv
 {
   bool is_attached;
+  bool can_control = true;
   
   const float light_radius_l = 4;
   const float light_attenuation_l = 3;
@@ -17,6 +18,19 @@ namespace priv
   const float light_attenuation_s = 2.5;
   
   color light_color (1, 1, 1, 1);
+  
+  void use_small_light_texture()
+  {
+    set_texture(lumi, "lumi-small-light");
+    set_atlas(lumi, "default:default");
+  }
+  
+  void use_lumi_texture()
+  {
+    set_texture(lumi, "lumi");
+    set_atlas(lumi, "default:default");
+  }
+  
   
   [start]
   void lumi_check_flag()
@@ -31,7 +45,7 @@ namespace priv
   {
     while(yield())
     {
-      if(has_flag("the_journey_commences!\\[T]/") && is_triggered("lumi"))
+      if(has_flag("the_journey_commences!\\[T]/") && is_triggered("lumi") && can_control)
       {
         is_attached ? lumi::detach() : lumi::attach();
       }   
@@ -41,7 +55,6 @@ namespace priv
   void lumi_init()
   {
     entity lumi_e = add_entity("lumi");
-    
     entity lumi_light = light::add();
     
     lumi.set_source(lumi_e);
@@ -51,21 +64,30 @@ namespace priv
     light::set_color(lumi, color(1, 1, 1, 1));
     light::set_attenuation(lumi, light_attenuation_l);
     
+    use_small_light_texture();
+    set_z(lumi, get_z(lumi) + 1);
     set_parent(lumi, player::get());
     set_position(lumi, vec(0, 0));
-	
-	float_entity(lumi_e, .1, 5, -1);
-	
+  
+    float_entity(lumi_e, .1, 5, -1);
+  
     is_attached = true;
-	
+  
     yield();
     light::remove_bg_light();
   }
 }
 
+void set_user_control(bool pY)
+{
+  lumi::priv::can_control = pY;
+}
+
 void attach()
 {
   player::lock(true);
+  set_z(lumi, get_z(lumi) + 1);
+  lumi::priv::use_small_light_texture();
   //set_atlas(lumi, "to_player");
   //animation::start(lumi);
   /* get_position(player::get()).distance */ move(lumi, get_position(player::get()), .4);
@@ -86,6 +108,8 @@ void attach()
 
 void detach()
 {
+  set_z(lumi, get_z(lumi) - 1);
+  lumi::priv::use_lumi_texture();
   detach_parent(lumi);
   set_position(lumi, get_position(player::get()));
   //set_atlas(lumi, "default:default");

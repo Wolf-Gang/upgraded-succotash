@@ -11,24 +11,12 @@ void lumi_start()
 {
   if(has_flag("the_journey_commences!\\[T]/"))
     return;
-  
-  entity lumi_e = add_entity("lumi");
-  
-  entity lumi_light = light::add();
-  
-  lumi.set_source(lumi_e);
-  lumi.set_light(lumi_light);
-  
-  light::set_radius(lumi, lumi::priv::light_radius_s);
-  light::set_color(lumi, lumi::priv::light_color);
-  light::set_attenuation(lumi, lumi::priv::light_attenuation_s);
-  
+  lumi::priv::lumi_init();
+  lumi::set_user_control(false);
+  lumi::detach();
   set_position(lumi, vec(3.5, 4.7));
-  
   light::set_radius(lumi, 1.5);
   light::set_attenuation(lumi, 2);
-  
-  float_entity(lumi, .1, 5, -1);
 }
 
 [start]
@@ -71,6 +59,7 @@ void meeting()
   nl("Let's go!");
   
   lumi::attach();
+  lumi::set_user_control(true);
   
   // light::set_radius(lumi, lumi::priv::light_radius);
   // light::set_attenuation(lumi, lumi::priv::light_attenuation);
