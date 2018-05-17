@@ -1,0 +1,21 @@
+<atlas>
+    <subtexture name="grass" x="219" y="1" w="32" h="32"/>
+    <subtexture name="path" x="253" y="1" w="32" h="32"/>
+    <subtexture name="path_end" x="287" y="1" w="32" h="32"/>
+    <subtexture name="redflower" x="559" y="1" w="16" h="16" frames="4" interval="300" loop="1"/>
+    <subtexture name="blueflower" x="625" y="1" w="16" h="16" frames="4" interval="300" loop="1"/>
+    <subtexture name="orangeflower" x="691" y="1" w="16" h="16" frames="4" interval="300" loop="1"/>
+    <subtexture name="purpleflower" x="757" y="1" w="16" h="16" frames="4" interval="300" loop="1"/>
+    <subtexture name="forestTreeWall" x="1" y="1" w="32" h="80" loop="1"/>
+    <subtexture name="forestWestSide" x="321" y="1" w="32" h="32" loop="1"/>
+    <subtexture name="forestSouthSideV1" x="355" y="1" w="32" h="32" loop="1"/>
+    <subtexture name="forestSouthSideV2" x="389" y="1" w="32" h="32" loop="1"/>
+    <subtexture name="forestEastSide" x="423" y="1" w="32" h="32" loop="1"/>
+    <subtexture name="forestBLCorner" x="457" y="1" w="32" h="32" loop="1"/>
+    <subtexture name="forestBLEdge" x="35" y="1" w="32" h="80" loop="1"/>
+    <subtexture name="sign" x="169" y="1" w="48" h="32" loop="1"/>
+    <subtexture name="Grass1" x="525" y="1" w="32" h="30" loop="1"/>
+    <subtexture name="Grass2" x="69" y="1" w="32" h="34" loop="1"/>
+    <subtexture name="bush" x="491" y="1" w="32" h="32" loop="1"/>
+    <subtexture name="fence" x="103" y="1" w="64" h="32" loop="1"/>
+</atlas>

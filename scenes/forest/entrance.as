@@ -11,11 +11,14 @@ void lumi_start()
 {
   if(has_flag("the_journey_commences!\\[T]/"))
     return;
+  
   lumi::priv::lumi_init();
   lumi::set_user_control(false);
   lumi::detach();
+  
   set_position(lumi, vec(3.5, 4.7));
-  light::set_radius(lumi, 1.5);
+  //
+  light::set_radius(lumi, 2);
   light::set_attenuation(lumi, 2);
 }
 

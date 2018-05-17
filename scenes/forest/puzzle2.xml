@@ -37,7 +37,7 @@
         <wall x="-3" y="-3" w="4" h="1"/>
         <wall x="1" y="-2" w="3" h="1"/>
         <wall x="-3" y="1" w="3" h="1"/>
-        <door x="-4" y="-2" w="1" h="3" name="" destination="puzzle2" scene="" offsetx="1" offsety="0"/>
+        <door x="-4" y="-2" w="1" h="3" name="temple_entrance" destination="puzzle2" scene="forest/temple/entrance" offsetx="1" offsety="0"/>
         <wall x="4" y="4" w="2" h="2"/>
         <wall x="1" y="9" w="1" h="1"/>
         <wall x="1" y="7" w="1" h="1"/>

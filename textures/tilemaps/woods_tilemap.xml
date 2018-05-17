@@ -16,16 +16,6 @@
     <subtexture name="sign" x="0" y="32" w="48" h="32" loop="1"/>
     <subtexture name="Grass1" x="128" y="64" w="32" h="30" loop="1"/>
     <subtexture name="Grass2" x="128" y="126" w="32" h="34" loop="1"/>
-    <subtexture name="old_wall" x="0" y="160" w="32" h="32" loop="1"/>
-    <subtexture name="old_wall_l" x="32" y="160" w="32" h="32" loop="1"/>
-    <subtexture name="l_old_door" x="0" y="192" w="32" h="32" loop="1"/>
-    <subtexture name="l_old_door_l" x="32" y="192" w="32" h="32" interval="200"/>
-    <subtexture name="r_old_door_l" x="32" y="224" w="32" h="32" interval="200"/>
-    <subtexture name="r_old_door" x="0" y="224" w="32" h="32" loop="1"/>
-    <subtexture name="orb" x="64" y="160" w="32" h="32" loop="1"/>
-    <subtexture name="orb_l" x="96" y="160" w="32" h="32" loop="1"/>
-    <subtexture name="l_old_door_open" x="32" y="192" w="32" h="32" frames="2" interval="200"/>
-    <subtexture name="r_old_door_open" x="32" y="224" w="32" h="32" frames="2" interval="200"/>
     <subtexture name="bush" x="160" y="80" w="32" h="32" loop="1"/>
     <subtexture name="fence" x="160" y="128" w="64" h="32" loop="1"/>
 </atlas>

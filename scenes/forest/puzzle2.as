@@ -27,25 +27,18 @@ void buildawall()
 }
 
 light_orb cracked_orb (vec(2.5, 9));
-
-[start]
-void orbish()
-{
-  do
-  {
-    cracked_orb.update_light();
-  } while(yield());
-}
-
 light_orb cracked_orb2 (vec(3.5, 0));
 
 [start]
-void oirb()
+void imtired()
 {
-  do
-  {
-    cracked_orb2.update_light();
-  } while(yield());
+  cracked_orb.update_light();
+}
+
+[start]
+void imtiredtoo()
+{
+  cracked_orb2.update_light();
 }
 
 bool door_open = false;

@@ -17,7 +17,9 @@ namespace priv
   const float light_radius_s = 2;
   const float light_attenuation_s = 2.5;
   
-  color light_color (1, 1, 1, 1);
+  vec light_offset = vec(0, -.5);
+  
+  color light_color (.95, .95, 1, 1);
   
   void use_small_light_texture()
   {
@@ -30,7 +32,6 @@ namespace priv
     set_texture(lumi, "lumi");
     set_atlas(lumi, "default:default");
   }
-  
   
   [start]
   void lumi_check_flag()
@@ -59,18 +60,19 @@ namespace priv
     
     lumi.set_source(lumi_e);
     lumi.set_light(lumi_light);
+    lumi.set_light_offset(light_offset);
     
     light::set_radius(lumi, light_radius_l);
-    light::set_color(lumi, color(1, 1, 1, 1));
+    light::set_color(lumi, light_color);
     light::set_attenuation(lumi, light_attenuation_l);
     
     use_small_light_texture();
     set_z(lumi, get_z(lumi) + 1);
     set_parent(lumi, player::get());
     set_position(lumi, vec(0, 0));
-  
-    float_entity(lumi_e, .1, 5, -1);
-  
+	
+    float_entity(lumi, .1, 5, -1);
+    
     is_attached = true;
   
     yield();
