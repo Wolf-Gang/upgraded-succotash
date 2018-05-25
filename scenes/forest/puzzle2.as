@@ -15,13 +15,13 @@ entity rdoor;
 [start]
 void buildawall()
 {
-  lwall = add_entity("woods_tilemap", "old_wall");
-  rwall = add_entity("woods_tilemap", "old_wall");
+  lwall = add_entity("walls", "wall");
+  rwall = add_entity("walls", "wall");
   set_position(lwall, vec(6.5, 5));
   set_position(rwall, vec(9.5, 5));
   
-  ldoor = add_entity("woods_tilemap", "l_old_door");
-  rdoor = add_entity("woods_tilemap", "r_old_door");
+  ldoor = add_entity("walls", "ldoor");
+  rdoor = add_entity("walls", "rdoor");
   set_position(ldoor, vec(7.5, 5));
   set_position(rdoor, vec(8.5, 5));
 }
@@ -45,10 +45,10 @@ bool door_open = false;
 
 void open_door()
 {
-  set_atlas(lwall, "old_wall_l");
-  set_atlas(rwall, "old_wall_l");
-  set_atlas(rdoor, "r_old_door_open");
-  set_atlas(ldoor, "l_old_door_open");
+  set_atlas(lwall, "wall_l");
+  set_atlas(rwall, "wall_l");
+  set_atlas(rdoor, "rdoor_open");
+  set_atlas(ldoor, "ldoor_open");
   group::enable("lightdoor", false);
   door_open = true;
   animation::start(rdoor);
@@ -57,10 +57,10 @@ void open_door()
 
 void close_door()
 {
-  set_atlas(lwall, "old_wall");
-  set_atlas(rwall, "old_wall");
-  set_atlas(rdoor, "r_old_door");
-  set_atlas(ldoor, "l_old_door");
+  set_atlas(lwall, "wall");
+  set_atlas(rwall, "wall");
+  set_atlas(rdoor, "rdoor");
+  set_atlas(ldoor, "ldoor");
   group::enable("lightdoor", true);
   door_open = false;
 }

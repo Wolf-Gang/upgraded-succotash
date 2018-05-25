@@ -1,0 +1,14 @@
+<atlas>
+    <subtexture name="cracked" x="0" y="32" w="32" h="32" loop="1"/>
+    <subtexture name="cracked_l" x="32" y="32" w="32" h="32" loop="1"/>
+    <subtexture name="below" x="0" y="64" w="32" h="32" loop="1"/>
+    <subtexture name="below_l" x="32" y="64" w="32" h="32" loop="1"/>
+    <subtexture name="sun" x="0" y="96" w="32" h="32" loop="1"/>
+    <subtexture name="sun_l" x="32" y="96" w="32" h="32" loop="1"/>
+    <subtexture name="rise" x="0" y="128" w="32" h="32" loop="1"/>
+    <subtexture name="rise_l" x="32" y="128" w="32" h="32" loop="1"/>
+    <subtexture name="new" x="0" y="160" w="32" h="32" loop="1"/>
+    <subtexture name="new_l" x="32" y="160" w="32" h="32" loop="1"/>
+    <subtexture name="orb" x="0" y="0" w="32" h="32" loop="1"/>
+    <subtexture name="orb_l" x="32" y="0" w="32" h="32" loop="1"/>
+</atlas>

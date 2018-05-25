@@ -9,12 +9,13 @@ class light_orb
 {
   light_orb()
   {
-    mOrb.set_source(add_entity("woods_tilemap", "orb"));
+    mOrb.set_source(add_entity("orb", "orb"));
+    //create_orb();
     mOrb.set_light(light::add());
     
     light::set_radius(mOrb, orb_radius);
     light::set_color(mOrb, color(1, 1, .8, .7));
-    //light::set_color(mOrb, orb_color);
+    // light::set_color(mOrb, orb_color);
     light::set_attenuation(mOrb, orb_attenuation);
     
     mOrb.set_light_offset(vec(0, -.5));
@@ -25,11 +26,12 @@ class light_orb
   
   light_orb(vec pPos)
   {
-    mOrb.set_source(add_entity("woods_tilemap", "orb"));
+    mOrb.set_source(add_entity("orb", "orb"));
+    //create_orb();
     mOrb.set_light(light::add());
     
     light::set_color(mOrb, color(1, 1, .8, .7));
-    //light::set_color(mOrb, orb_color);
+    // light::set_color(mOrb, orb_color);
     light::set_radius(mOrb, orb_radius);
     light::set_attenuation(mOrb, orb_attenuation);
     
@@ -76,6 +78,24 @@ class light_orb
   {
     do
     {
+      if(!lumi.is_lighting(mOrb))
+        continue;
+      else
+        light::keep_on(this);
+    } while(!is_on() && yield());
+  }
+  
+  protected bool mUpdate;
+  
+  protected light_source mOrb;
+};
+
+class cracked_orb : light_orb
+{
+  void update_light() override
+  {
+    do
+    {
       if(!mUpdate)
         continue;
       if(!light::is_on(mOrb) && lumi.is_lighting(mOrb))
@@ -84,11 +104,7 @@ class light_orb
         turn_off();
     } while(yield());
   }
-  
-  protected bool mUpdate;
-  
-  protected light_source mOrb;
-}
+};
 
 class symbol_orb : light_orb
 {
@@ -96,6 +112,7 @@ class symbol_orb : light_orb
   {
     super();
     mSymbol = pSymbol;
+    set_atlas();
     mArea_name = pArea_name;
     if(has_flag("orb_" + pArea_name + formatInt(mSymbol) + "_active"))
       light::keep_on(this);
@@ -107,6 +124,26 @@ class symbol_orb : light_orb
     mSymbol = pSymbol;
     if(has_flag("orb_" + pArea_name + formatInt(mSymbol) + "_active"))
       light::keep_on(this);
+  }
+  
+  private void set_atlas()
+  {
+    string atlas;
+    switch(mSymbol)
+    {
+    case light::orb_symbol::below:
+      atlas = "below";
+      break;
+    case light::orb_symbol::sun:
+      atlas = "sun";
+      break;
+    case light::orb_symbol::rise:
+      atlas = "rise";
+      break;
+    case light::orb_symbol::anew:
+      atlas = "new";
+      break;
+    }
   }
   
   protected light::orb_symbol mSymbol;

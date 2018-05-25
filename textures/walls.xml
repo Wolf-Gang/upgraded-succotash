@@ -1,0 +1,8 @@
+<atlas>
+    <subtexture name="wall" x="0" y="0" w="32" h="32" loop="1"/>
+    <subtexture name="wall_l" x="0" y="32" w="32" h="32" loop="1"/>
+    <subtexture name="ldoor" x="0" y="64" w="32" h="32" loop="1"/>
+    <subtexture name="ldoor_l" x="0" y="96" w="32" h="32" frames="2" interval="200"/>
+    <subtexture name="rdoor" x="0" y="128" w="32" h="32" loop="1"/>
+    <subtexture name="rdoor_l" x="0" y="160" w="32" h="32" frames="2" interval="200"/>
+</atlas>
