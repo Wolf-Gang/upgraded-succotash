@@ -1,3 +1,5 @@
+#include "../../backend/light_orb.as"
+
 [start]
 void start()
 {

@@ -9,36 +9,36 @@ class light_orb
 {
   light_orb()
   {
-    mOrb.set_source(add_entity("orb", "orb"));
-    //create_orb();
-    mOrb.set_light(light::add());
-    
-    light::set_radius(mOrb, orb_radius);
-    light::set_color(mOrb, color(1, 1, .8, .7));
-    // light::set_color(mOrb, orb_color);
-    light::set_attenuation(mOrb, orb_attenuation);
-    
-    mOrb.set_light_offset(vec(0, -.5));
-    //mOrb.set_light_offset(orb_offset);
-    mOrb.turn_off();
-    start_updating();
+    do_thing();
   }
   
   light_orb(vec pPos)
   {
+    do_thing();
+    ::set_position(mOrb, pPos);
+  }
+  
+  private void do_thing()
+  {
     mOrb.set_source(add_entity("orb", "orb"));
-    //create_orb();
     mOrb.set_light(light::add());
     
+    light::set_radius(mOrb, orb_radius);
     light::set_color(mOrb, color(1, 1, .8, .7));
     // light::set_color(mOrb, orb_color);
-    light::set_radius(mOrb, orb_radius);
     light::set_attenuation(mOrb, orb_attenuation);
     
     mOrb.set_light_offset(vec(0, -.5));
     //mOrb.set_light_offset(orb_offset);
     mOrb.turn_off();
-    ::set_position(mOrb, pPos);
+    
+    create_thread(
+    function(pArgs)
+    {
+      light_orb@ l = cast<light_orb>(pArgs["this"]);
+      l.update_light();
+    }, dictionary = {{"this", @this}});
+    
     start_updating();
   }
   
@@ -76,13 +76,13 @@ class light_orb
   
   void update_light()
   {
-    do
+    for (; !is_on(); yield())
     {
       if(!lumi.is_lighting(mOrb))
         continue;
       else
         light::keep_on(this);
-    } while(!is_on() && yield());
+    }
   }
   
   protected bool mUpdate;
@@ -92,9 +92,19 @@ class light_orb
 
 class cracked_orb : light_orb
 {
+  cracked_orb()
+  {
+    super();
+  }
+  
+  cracked_orb(vec pPos)
+  {
+    super(pPos);
+  }
+  
   void update_light() override
   {
-    do
+    for(;; yield())
     {
       if(!mUpdate)
         continue;
@@ -102,11 +112,11 @@ class cracked_orb : light_orb
         turn_on();
       else if(light::is_on(mOrb) && !lumi.is_lighting(mOrb))
         turn_off();
-    } while(yield());
+    }
   }
 };
 
-class symbol_orb : light_orb
+class symbol_orb : cracked_orb
 {
   symbol_orb(light::orb_symbol pSymbol, string pArea_name)
   {
@@ -144,6 +154,7 @@ class symbol_orb : light_orb
       atlas = "new";
       break;
     }
+    ::set_atlas(mOrb, atlas);
   }
   
   protected light::orb_symbol mSymbol;

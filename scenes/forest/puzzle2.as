@@ -26,20 +26,8 @@ void buildawall()
   set_position(rdoor, vec(8.5, 5));
 }
 
-light_orb cracked_orb (vec(2.5, 9));
-light_orb cracked_orb2 (vec(3.5, 0));
-
-[start]
-void imtired()
-{
-  cracked_orb.update_light();
-}
-
-[start]
-void imtiredtoo()
-{
-  cracked_orb2.update_light();
-}
+cracked_orb corb (vec(2.5, 9));
+cracked_orb corb2 (vec(3.5, 0));
 
 bool door_open = false;
 
@@ -47,8 +35,8 @@ void open_door()
 {
   set_atlas(lwall, "wall_l");
   set_atlas(rwall, "wall_l");
-  set_atlas(rdoor, "rdoor_open");
-  set_atlas(ldoor, "ldoor_open");
+  set_atlas(rdoor, "rdoor_l");
+  set_atlas(ldoor, "ldoor_l");
   group::enable("lightdoor", false);
   door_open = true;
   animation::start(rdoor);
@@ -70,9 +58,9 @@ void operate_door()
 {
   do
   {
-    if(door_open && !(light::is_on(cracked_orb) || light::is_on(cracked_orb2)))
+    if(door_open && !(light::is_on(corb) || light::is_on(corb2)))
       close_door();
-    else if(!door_open && (light::is_on(cracked_orb) || light::is_on(cracked_orb2)))
+    else if(!door_open && (light::is_on(corb) || light::is_on(corb2)))
       open_door();
   } while (yield());
 }
