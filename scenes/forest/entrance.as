@@ -69,6 +69,8 @@ void meeting()
   
   set_flag("the_journey_commences!\\[T]/");
   
+  save();
+  
   player::lock(false);
   narrative::end();
   group::enable("meet_lumi", false);

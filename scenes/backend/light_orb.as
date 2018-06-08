@@ -90,6 +90,21 @@ class light_orb
   protected light_source mOrb;
 };
 
+class on_orb : light_orb
+{
+  on_orb()
+  {
+    super();
+    light::keep_on(this);
+  }
+  
+  on_orb(vec pPos)
+  {
+    super(pPos);
+    light::keep_on(this);
+  }
+}
+
 class cracked_orb : light_orb
 {
   cracked_orb()
@@ -132,6 +147,7 @@ class symbol_orb : cracked_orb
   {
     super(pPos);
     mSymbol = pSymbol;
+    set_atlas();
     if(has_flag("orb_" + pArea_name + formatInt(mSymbol) + "_active"))
       light::keep_on(this);
   }
